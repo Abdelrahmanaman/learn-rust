@@ -1,15 +1,23 @@
-use std::fs;
 
 
 fn main () {
-    let res =read_file_unsafe("test.txt".to_string());
-    println!("{}", res);
-    
-    print!("Hello, world!");
+    let mut vec = Vec::new();
+
+    vec.push(1);
+    vec.push(43);
+    vec.push(4);
+    vec.push(3);
+    vec.push(6);
+    let vec2 = return_even(vec);
+    println!("{:?}", vec2);
 }
 
-
-fn read_file_unsafe(file_content: String) -> String {
-    let res = fs::read_to_string(file_content);
-    return res.unwrap()
+fn return_even(vec: Vec<i32>) -> Vec<i32> {
+    let mut even_vec =  Vec::new();
+    for i in vec{
+        if i % 2 == 0 {
+             even_vec.push(i);
+        }
+    }
+    Vec::new()
 }
